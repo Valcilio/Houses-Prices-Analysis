@@ -2,9 +2,9 @@
 
 
 
-Link to the app in english:
+Link to the app in english: https://houses-analytics.herokuapp.com/
 
-Link to the app in portuguese:
+Link to the app in portuguese: https://houses-analytics-portuguese.herokuapp.com/
 
 ![houses prices analytics](https://i.ibb.co/h7h6tLs/houses-prices-analytics2.png)
 
