@@ -404,7 +404,7 @@ def data_analysis(df2):
     return None
 
 def buys_map(df2, geofile):
-    st.title('Visão das Melhores Oportunidades:')
+    st.title('4. Visão das Melhores Oportunidades:')
 
     c1, c2 = st.beta_columns((1, 1))
 
@@ -461,7 +461,7 @@ def buys_map(df2, geofile):
     return None
 
 def prices_growing(df2):
-    st.title('Estudo dos Crescimentos:')
+    st.title('5. Estudo dos Crescimentos:')
 
     c1, c2 = st.beta_columns((1, 1))
 
@@ -510,7 +510,7 @@ def prices_growing(df2):
     return None
 
 def financial_results():
-    st.title('Resultados Financeiros:')
+    st.title('6. Resultados Financeiros:')
 
     st.write('É esperado que a House Rocket opte por adquirir em geral as casas que foram classificadas como '
              'excelentes ofertas de acordo com a análise fornecida e desse modo consiga obter um retorno de'
@@ -522,7 +522,7 @@ def financial_results():
     return None
 
 def next_steps():
-    st.title('Próximos Passos:')
+    st.title('7. Próximos Passos:')
 
     st.write('Como próximos passos é esperado que seja feita uma organização para poder implementar um '
              'algoritmo de machine learning que auxilie a House Rocket a conseguir ir realizando essas análises '
@@ -533,7 +533,7 @@ def next_steps():
     return None
 
 def conclusion():
-    st.title('Conclusão')
+    st.title('8. Conclusão')
 
     st.write('A House Rocket, com o auxílio das análises fornecidas nesse projeto, poderá'
              'abordar ofertas interessantes de compra e realizar vendas vantajosas para ela, '
