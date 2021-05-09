@@ -179,39 +179,39 @@ def premises_plan(imag1):
     st.subheader('1.1. Premissas:')
 
     st.write('Esse projeto tem como premissa ajudar a empresa "House Sales in King County, USA",'
-             'a detectar oportunidades boas oportunidades de compra de casas para depois poder'
+             'a detectar boas oportunidades de compra de casas para depois poder '
              'revender por um preço maior e assim obter um lucro maior graças a isso.')
     st.write('A House Rocket solicitou em base duas perguntas principais:')
     st.write('1. Quais imóveis comprar e por quanto vender?')
     st.write('2. Qual o melhor momento para a venda desses imóveis?')
     st.write('Desse modo, esse projeto possuí como premissas ser capaz de responder essas questões,'
-             'e também produzir outros insights relevantes que possam ser capazes de causar impacto'
-             'reais nas tomadas de decisões e consequentemente no negócio em si.')
+             'e também produzir outros insights relevantes que possam ser capazes de causar impactos '
+             'reais na tomada de decisão e consequentemente no negócio em si.')
 
-    st.subheader('1.2. Planejamento da solução:')
+    st.subheader('1.2. Planejamento da Solução:')
 
     st.write('O planejamento pode ser dito como dividido em 4 parte: boas oportunidades de compra,'
-             'aumento no preço para poder vender, melhor momento para revenda e hipoteses a '
+             'aumento no preço para poder vender, melhor momento para revenda e hipóteses a '
              'serem validadas ou desvalidadas. Desse modo, segue abaixo o detalhamento de cada uma delas:')
 
-    st.write('Oportunidades de compra > nesse ponto foi realizado a análise em ordem crescente'
+    st.write('Oportunidades de compra > nesse ponto foi realizado a análise em ordem crescente '
              'considerando os seguintes aspectos: tamanho, preço, andares, vista para a água,'
              'quantidade de quartos e de banheiros. Todos esses aspectos em ordem crescente e'
              'quanto mais deles eram cumpridos, melhor a classificação sendo nessa ordem: Bad - Good - Great - Excellent')
 
     st.write('Aumento no preço das casas para revendas > foi realizado de acordo com um estudo do preço médio das casas'
-             'com essas condicionais e de suas ofertas.')
+             ' com essas condicionais e de suas ofertas.')
 
     st.write('Melhor momento para revenda > foi realizado de acordo com uma análise do preço médio nas'
-             'temporadas do ano encontrando assim qual seria o momento mais ideal.')
+             ' temporadas do ano encontrando assim qual seria o momento mais ideal.')
 
-    st.write('Foram tomadas 10 hipoteses que foram validadas ou desvalidadas no decorrer desse projeto:')
+    st.write('Foram tomadas 10 hipóteses que foram validadas ou desvalidadas no decorrer desse projeto:')
     st.write('H1 - O preço das casas com condição 3 a 4 com relação as casas com condição 1 é cerca de 41% maior.')
     st.write('H2 - O preço das casas com 2 a 4 quartos com relação a casas sem quartos é 38,27% maior ou mais.')
     st.write('H3 - O preço das casas com 2 a 4 banheiros com relação a casas sem banheiro é igual ou maior que 49,30%.')
     st.write('H4 - O preço das casas com 2 andares em relação a casas com apenas 1 andar é igual ou maior do que 26,10%.')
     st.write('H5 - As casas com vista para água possuem um preço 67,86% maior do que casas sem vista para água.')
-    st.write('H6 - As melhores oportunidades se encontram em maioria no sul de seattle.')
+    st.write('H6 - As melhores oportunidades se encontram em maioria no sul de Seattle.')
     st.write('H7: O norte possui as casas de maiores preços.')
     st.write('H8 - O crescimento anual do preço das casas é cerca de 5%.')
     st.write('H9 - O crescimento mensal do preço das casas é possui uma certa linearidade, sempre mantendo uma estabilidade de preços.')
@@ -238,12 +238,12 @@ def data_quest(df2):
                       'floors', 'status', 'exchange_upgrade']].sort_values('price', ascending=True),
                  height=600)
 
-    st.write('A tabela em questão foi construída levando em consideração todos os dados da base de dados para detectar as melhores ofertas e rankeá-las adequandamente'
+    st.write('A tabela em questão foi construída levando em consideração todos os dados da base de dados para detectar as melhores ofertas e rankeá-las adequandamente '
              'desse modo a abaixo:')
     st.write('1. bad offer: as piores ofertas com preços super avaliados e que caso revendidos, mesmo que na melhor época, daria pouco lucro. (cerca de 10% a mais)')
     st.write('2. good offer: ofertas subavaliadas que podem rendar um bom lucro devido ao baixo preço de aquisição. (cerca de 20% a mais)')
     st.write('3. great offer: ofertas subavalidas com mais quartos e banheiros e que podem render um ótimo lucro. (cerca de 30% a mais)')
-    st.write('4. excellent offer: indicações de imóveis subavaliados com todos os benefícios dos outros e mais de um andar, podem render um excellente lucro. (cerca de 40% a mais)')
+    st.write('4. excellent offer: indicações de imóveis subavaliados com todos os benefícios dos outros e mais de um andar, podem render um excelente lucro. (cerca de 40% a mais)')
     st.write('')
     st.write('Todos esses aumentos no preço para revenda, foram feitos calculados com base neles serem vendidos na época certa.')
 
@@ -432,7 +432,7 @@ def buys_map(df2, geofile):
     with c1:
         folium_static(density_map)
 
-    c1.write('Está hipótese é desvalidada, pois é visível no mapa que o sul possui menos oportunidades excellentes que outras regiões.')
+    c1.write('Está hipótese é desvalidada, pois é visível no mapa que o sul possui menos oportunidades excelentes que outras regiões.')
 
     # Region Price Map
     c2.subheader('H7: O norte possui as casas de maiores preços. (Falso)')
@@ -515,11 +515,11 @@ def prices_growing(df2):
 def financial_results():
     st.title('Resultados Financeiros:')
 
-    st.write('É esperado que a House Rocket opte por adquirir em geral as casas que foram classificadas como'
+    st.write('É esperado que a House Rocket opte por adquirir em geral as casas que foram classificadas como '
              'excelentes ofertas de acordo com a análise fornecida e desse modo consiga obter um retorno de'
              'cerca de 40% lucro adicional graças a essa estratégia.')
 
-    st.write('Desse modo, retirados os tributos incidentes no USA, acredito que seja possível visualizar um aumento'
+    st.write('Desse modo, retirados os tributos incidentes no USA, acredito que seja possível visualizar um aumento '
              'de cerca de 35% na receita bruta e ao menos 30% no lucro líquido da empresa.')
 
     return None
@@ -527,10 +527,10 @@ def financial_results():
 def next_steps():
     st.title('Próximos Passos:')
 
-    st.write('Como próximos passos é esperado que seja feita uma organização para poder implementar um'
-             'algoritmo de machine learning que auxilie a House Rocket a conseguir ir realizando essas análises'
-             'de modo muito mais rapído e dinâmico, além de também haver a necessidade de ocorrer uma atualização'
-             'do portofólio e também de manter em vista as casas já avaliadas para caso haja mudanças nos estados'
+    st.write('Como próximos passos é esperado que seja feita uma organização para poder implementar um '
+             'algoritmo de machine learning que auxilie a House Rocket a conseguir ir realizando essas análises '
+             'de modo muito mais rapído e dinâmico, além de também haver a necessidade de ocorrer uma atualização '
+             'do portofólio e também de manter em vista as casas já avaliadas para caso haja mudanças nos estados '
              'delas e possam ser encontradas oportunidades.')
 
     return None
@@ -565,4 +565,5 @@ data_analysis(df_ap1)
 buys_map(df_ap1, geofile)
 prices_growing(data)
 financial_results()
+nex_steps()
 conclusion()
