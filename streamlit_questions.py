@@ -174,7 +174,7 @@ def data_aprimorate(data):
 def premises_plan(imag1):
     st.title('1. Premissas e Planejamento da Solução:')
 
-    st.image(imag1, caption='Criado Por Valcílio Silva')
+    st.image(imag1, caption='Criado Por Valcílio Silva Júnior')
 
     st.subheader('1.1. Premissas:')
 
