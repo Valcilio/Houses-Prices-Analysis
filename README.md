@@ -4,7 +4,7 @@ Link to the app in english:
 
 Link to the app in portuguese:
 
-![houses prices analytics](https://i.ibb.co/VMLfXLW/houses-prices-analytics.png)
+![houses prices analytics](https://i.ibb.co/h7h6tLs/houses-prices-analytics2.png)
 
 **PREMISES:**
 
