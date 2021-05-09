@@ -4,7 +4,7 @@ Link to the app in english:
 
 Link to the app in portuguese:
 
-![houses prices analytics](/home/valcilio/PycharmProjects/pythonProject11/houses prices analytics.png)
+![houses prices analytics](https://i.ibb.co/VMLfXLW/houses-prices-analytics.png)
 
 **PREMISES:**
 
