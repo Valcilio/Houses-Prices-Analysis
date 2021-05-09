@@ -5,6 +5,7 @@ from streamlit_folium import folium_static
 from folium.plugins import MarkerCluster
 import plotly.express as px
 import geopandas
+from PIL import Image
 
 st.set_page_config(layout='wide')
 
@@ -19,6 +20,12 @@ def get_geofile(url):
     geofile = geopandas.read_file(url)
 
     return geofile
+
+@st.cache(allow_output_mutation=True)
+def get_image(path2):
+    imag1 = Image.open(path2)
+
+    return imag1
 
 def data_groupby(data, grou):
     cou = data[[grou[0], grou[1]]].groupby(grou[0]).median().reset_index()
@@ -164,8 +171,10 @@ def data_aprimorate(data):
 
     return df2
 
-def premises_plan():
+def premises_plan(imag1):
     st.title('1. Premises and Solution Plan:')
+
+    st.image(imag1, caption='Created by Valcílio Júnior')
 
     st.subheader('1.1. Premises:')
 
@@ -549,13 +558,17 @@ def conclusion():
 
 
 # ETL
+
+# Data Extraction
 url = 'https://opendata.arcgis.com/datasets/83fc2e72903343aabff6de8cb445b81c_2.geojson'
 path = 'kc_house_data.csv'
+path2 = 'houses prices analytics2.png'
+imag1 = get_image(path2)
 data = get_data(path)
 geofile = get_geofile(url)
 
 # Transformation
-premises_plan()
+premises_plan(imag1)
 df_ap1 = data_aprimorate(data)
 data_quest(df_ap1)
 data_analysis(df_ap1)
