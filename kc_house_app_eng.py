@@ -205,11 +205,11 @@ def premises_plan(imag1):
              'in the seasons of the year, thus finding what would be the most ideal time.')
 
     st.write('10 hypotheses were taken, which were validated or devalued in the course of this project:')
-    st.write('H1 - The price of houses with conditions 3 to 4 in relation to houses with condition 1 is about 41% higher.')
-    st.write('H2 - The price of houses with 2 to 4 bedrooms in relation to houses without bedrooms is 38.27% higher or more.')
-    st.write('H3 - The price of houses with 2 to 4 bathrooms in relation to houses without a bathroom is equal to or greater than 49.30%.')
-    st.write('H4 - The price of houses with 2 floors in relation to houses with only 1 floor is equal to or greater than 26.10%.')
-    st.write('H5 - Houses with a water view have a price 67.86% higher than houses without a water view.')
+    st.write('H1 - The price of houses with conditions 3 to 4 in relation to houses with condition 1 is higher.')
+    st.write('H2 - The price of houses with 2 to 4 bedrooms in relation to houses without bedrooms is higher.')
+    st.write('H3 - The price of houses with 2 to 4 bathrooms in relation to houses without a bathroom is higher.')
+    st.write('H4 - The price of houses with 2 floors in relation to houses with only 1 floor is higher.')
+    st.write('H5 - Houses with a water view have a price higher than houses without a water view.')
     st.write('H6 - The best opportunities are found mostly in south seattle.')
     st.write('H7: The north has the highest priced houses.')
     st.write('H8 - The annual growth in house prices is around 5%.')
@@ -347,7 +347,7 @@ def data_analysis(df2):
     #p5 = -(percentage1 * 100)
 
     c1.subheader('H1 - The price of houses with conditions 3 to 4 in relation to houses with '
-                 'condition 1 is about 41% higher.(True)')
+                 'condition 1 is higher.(True)')
 
     # data plot
 
@@ -362,7 +362,7 @@ def data_analysis(df2):
              'higher than houses with conditions 1.')
 
     c2.subheader('H2 - The price of houses with 2 to 4 bedrooms in relation to houses '
-                 'without bedrooms is 38.27% higher or more. (True)')
+                 'without bedrooms is higher. (True)')
 
     cols = ['bedrooms', 'price']
     ren = ['Bedrooms', 'Price Median']
@@ -376,7 +376,7 @@ def data_analysis(df2):
              'than houses with no bedroom.')
 
     c3.subheader('H3 - The price of houses with 2 to 4 bathrooms in relation to houses without '
-                 'a bathroom is equal to or greater than 49.30%. (True)')
+                 'a bathroom is higher. (True)')
 
     cols = ['bathrooms', 'price']
     ren = ['Bathrooms', 'Price Median']
@@ -388,7 +388,7 @@ def data_analysis(df2):
              'about 26.10% higher than houses with 1 without bathrooms.')
 
     c4.subheader('H4 - The price of houses with 2 floors in relation to houses with only 1 floor '
-                 'is equal to or greater than 26.10%. (True)')
+                 'is higher. (True)')
     cols = ['floors', 'price']
     ren = ['Floors', 'Price Median']
     dg4 = data_rename(dg4, cols, ren)
@@ -398,7 +398,7 @@ def data_analysis(df2):
     c4.write('The graph above shows that houses with 2 floors have a price about 26.10% higher '
              'than houses with 1 floor.')
 
-    st.subheader('H5 - Houses with a water view have a price 67.86% higher than houses '
+    st.subheader('H5 - Houses with a water view have a price higher than houses '
                  'without a water view. (True)')
     cols = ['waterfront', 'price']
     ren = ['Waterfront', 'Price Median']
