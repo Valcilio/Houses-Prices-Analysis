@@ -57,15 +57,15 @@ Best time for resale> was carried out according to an analysis of the average pr
 
 10 hypotheses were taken, which were validated or devalued in the course of this project:
 
-H1 - The price of houses with conditions 3 to 4 in relation to houses with condition 1 is about 41% higher.
+H1 - The price of houses with conditions 3 to 4 in relation to houses with condition 1 is higher.
 
-H2 - The price of houses with 2 to 4 bedrooms in relation to houses without bedrooms is 38.27% higher or more.
+H2 - The price of houses with 2 to 4 bedrooms in relation to houses without bedrooms is higher.
 
-H3 - The price of houses with 2 to 4 bathrooms in relation to houses without a bathroom is equal to or greater than 49.30%.
+H3 - The price of houses with 2 to 4 bathrooms in relation to houses without a bathroom is higher.
 
-H4 - The price of houses with 2 floors in relation to houses with only 1 floor is equal to or greater than 26.10%.
+H4 - The price of houses with 2 floors in relation to houses with only 1 floor is higher.
 
-H5 - Houses with a water view have a price 67.86% higher than houses without a water view.
+H5 - Houses with a water view have a price higher than houses without a water view.
 
 H6 - The best opportunities are found mostly in south seattle.
 
