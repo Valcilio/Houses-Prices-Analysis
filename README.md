@@ -6,7 +6,7 @@ Link to the app in english: https://houses-analytics.herokuapp.com/
 
 ![houses prices analytics](https://i.ibb.co/h7h6tLs/houses-prices-analytics2.png)
 
-**PREMISES:**
+## **PREMISES:**
 
 This project has as premise to help the company "House Sales in King County, USA", to find good home buying opportunities and then be able to resell for a higher price and thus obtain a higher profit thanks to this.
 
@@ -18,7 +18,7 @@ House Rocket asked on the basis of two main questions:
 
 In this way, this project has as premises to be able to answer these questions, and also to produce other relevant insights that may be able to have an impact in decision-making and, consequently, in the business itself.
 
-**Attributes List:**
+## **Attributes List:**
 
 | Attributtes     | Meaning                                                      |
 | --------------- | ------------------------------------------------------------ |
@@ -43,7 +43,7 @@ In this way, this project has as premises to be able to answer these questions, 
 | sqft_livining15 | Measured in square feet of the inside of the house in relation with the 15 neighboors more close. |
 | sqft_lot15      | Measured in square feet of the all house in relation with the 15 neighboors more close. |
 
-**Solution Plan:**
+## **Solution Plan:**
 
 The planning can be said to be divided into 4 parts: good buying opportunities, increase in the price to be able to sell, best time for resale and chances to be validated or devalued. Thus, the details of each one are as follows:
 
@@ -75,17 +75,20 @@ H9 - The monthly house price growth is somewhat linear, always maintaining price
 
 H10 - Houses before 1960 have a lower average price.
 
-**Financial Results**
+## **Financial Results**
 
 It is expected that House Rocket will choose to purchase in general the houses that have been classified as excellent offers according to the analysis provided and thus be able to obtain a return of about 40% additional profit thanks to this strategy.
 
 Thus, excluding the taxes levied in the USA, I believe it is possible to see an increase of about 35% in gross revenue and at least 30% in the company's net profit.
 
-**Next Steps**
+## **Next Steps**
 
 As next steps, it is expected that an organization will be made in order to implement a machine learning algorithm that helps House Rocket to be able to carry out these analyzes in a much faster and more dynamic way, in addition to the need to update the portfolio and also to keep in mind the houses already evaluated in case there are changes in their states and opportunities can be found.
 
-**Conclusion**
+## **Conclusion**
 
 House Rocket, with the help of the analyzes provided in this project, will be able to address interesting purchase offers and make sales that are advantageous for it, in addition to being able to better understand the business itself and also take advantage of the insights obtained through this project to reach new brands in the current market. Thus, managing to grow your profit and keep updating to remain more solid.
 
+## **Learns**
+
+This was my first data science project where I learned the data analytics techniques and its libraries like matplotly and plotly.
