@@ -49,125 +49,7 @@ def data_reset():
 
 def data_aprimorate(data):
 
-    pd.set_option('display.float_format', lambda x: '%.2f' % x)
-
-    data['date'] = pd.to_datetime(data['date']).dt.strftime('%Y-%m-%d')
-
-    for i in range(len(data)):
-        if (data.loc[i, 'bathrooms'] > 0) & (data.loc[i, 'bathrooms'] < 1):
-            data.loc[i, 'bathrooms'] = 1
-
-        elif (data.loc[i, 'bathrooms'] > 1) & (data.loc[i, 'bathrooms'] < 2):
-            data.loc[i, 'bathrooms'] = 2
-
-        elif (data.loc[i, 'bathrooms'] > 2) & (data.loc[i, 'bathrooms'] < 3):
-            data.loc[i, 'bathrooms'] = 3
-
-        elif (data.loc[i, 'bathrooms'] > 3) & (data.loc[i, 'bathrooms'] < 4):
-            data.loc[i, 'bathrooms'] = 4
-
-        elif (data.loc[i, 'bathrooms'] > 4) & (data.loc[i, 'bathrooms'] < 5):
-            data.loc[i, 'bathrooms'] = 5
-
-        elif (data.loc[i, 'bathrooms'] > 5) & (data.loc[i, 'bathrooms'] < 6):
-            data.loc[i, 'bathrooms'] = 6
-
-        elif (data.loc[i, 'bathrooms'] > 6) & (data.loc[i, 'bathrooms'] < 7):
-            data.loc[i, 'bathrooms'] = 7
-
-        elif (data.loc[i, 'bathrooms'] > 7) & (data.loc[i, 'bathrooms'] < 8):
-            data.loc[i, 'bathrooms'] = 8
-
-    for i in range(len(data)):
-        if (data.loc[i, 'waterfront'] == 0):
-            data.loc[i, 'waterfront'] = 'no'
-
-        elif (data.loc[i, 'waterfront'] == 1):
-            data.loc[i, 'waterfront'] = 'yes'
-
-    for i in range(len(data)):
-        if (data.loc[i, 'floors'] > 1) & (data.loc[i, 'floors'] < 2):
-            data.loc[i, 'floors'] = 2
-
-        elif (data.loc[i, 'floors'] > 2) & (data.loc[i, 'floors'] < 3):
-            data.loc[i, 'floors'] = 3
-
-        elif (data.loc[i, 'floors'] > 3) & (data.loc[i, 'floors'] < 4):
-            data.loc[i, 'floors'] = 4
-
-    grou = ['zipcode', 'price']
-
-    df = data_groupby(data, grou)
-
-    grou = ['zipcode', 'sqft_lot']
-
-    df1 = data_groupby(data, grou)
-
-    df2 = data_merge(data, df, 'zipcode')
-
-    df2 = data_merge(df2, df1, 'zipcode')
-
-    cols = ['price_y', 'price_x']
-    ren = ['price_median', 'price']
-
-    df2 = data_rename(df2, cols, ren)
-
-    cols = ['sqft_lot_x', 'sqft_lot_y']
-    ren = ['sqft_lot', 'lot_median']
-
-    df2 = data_rename(df2, cols, ren)
-
-    for i in range(len(df2)):
-        if (df2.loc[i, 'price'] < df2.loc[i, 'price_median']) & (df2.loc[i, 'condition'] >= 3) & (df2.loc[i, 'bedrooms'] >= 2) & (df2.loc[i, 'bathrooms'] >= 2):
-            df2.loc[i, 'status'] = 'good offer'
-
-            if (df2.loc[i, 'sqft_lot'] > df2.loc[i, 'lot_median']) & (df2.loc[i, 'sqft_basement'] > 0):
-                df2.loc[i, 'status'] = 'great offer'
-
-                if (df2.loc[i, 'floors'] >= 2):
-                    df2.loc[i, 'status'] = 'excellent offer'
-
-        else:
-            df2.loc[i, 'status'] = 'bad offer'
-
-    for i in range(len(df2)):
-
-        if (df2.loc[i, 'date'] >= '2014-06-01') & (df2.loc[i, 'date'] <= '2014-08-31'):
-            df2.loc[i, 'seasons'] = 'summer'
-
-        elif (df2.loc[i, 'date'] >= '2014-09-01') & (df2.loc[i, 'date'] <= '2014-11-30'):
-            df2.loc[i, 'seasons'] = 'autumn'
-
-        elif (df2.loc[i, 'date'] >= '2014-03-01') & (df2.loc[i, 'date'] <= '2014-05-31'):
-            df2.loc[i, 'seasons'] = 'spring'
-
-        else:
-            df2.loc[i, 'seasons'] = 'winter'
-
-    cols = ['seasons', 'price']
-
-    kc = data_groupby(df2, cols)
-
-    df = data_merge(df2, kc, 'seasons')
-
-    cols = ['price_x', 'price_y']
-    ren = ['price', 'season_median']
-
-    df2 = data_rename(df, cols, ren)
-
-    for i in range(len(df)):
-
-        if (df2.loc[i, 'status'] == 'good offer'):
-            df2.loc[i, 'exchange_upgrade'] = '+20%'
-
-        elif (df2.loc[i, 'status'] == 'great offer'):
-            df2.loc[i, 'exchange_upgrade'] = '+30%'
-
-        elif (df2.loc[i, 'status'] == 'excellent offer'):
-            df2.loc[i, 'exchange_upgrade'] = '+40%'
-
-        else:
-            df2.loc[i, 'exchange_upgrade'] = '10% or less'
+    df2 = pd.read_csv('kc_data.csv')
 
     return df2
 
@@ -205,11 +87,11 @@ def premises_plan(imag1):
              'in the seasons of the year, thus finding what would be the most ideal time.')
 
     st.write('10 hypotheses were taken, which were validated or devalued in the course of this project:')
-    st.write('H1 - The price of houses with conditions 3 to 4 in relation to houses with condition 1 is higher.')
-    st.write('H2 - The price of houses with 2 to 4 bedrooms in relation to houses without bedrooms is higher.')
-    st.write('H3 - The price of houses with 2 to 4 bathrooms in relation to houses without a bathroom is higher.')
-    st.write('H4 - The price of houses with 2 floors in relation to houses with only 1 floor is higher.')
-    st.write('H5 - Houses with a water view have a price higher than houses without a water view.')
+    st.write('H1 - The price of houses with conditions 3 to 4 in relation to houses with condition 1 is about 41% higher.')
+    st.write('H2 - The price of houses with 2 to 4 bedrooms in relation to houses without bedrooms is 38.27% higher or more.')
+    st.write('H3 - The price of houses with 2 to 4 bathrooms in relation to houses without a bathroom is equal to or greater than 49.30%.')
+    st.write('H4 - The price of houses with 2 floors in relation to houses with only 1 floor is equal to or greater than 26.10%.')
+    st.write('H5 - Houses with a water view have a price 67.86% higher than houses without a water view.')
     st.write('H6 - The best opportunities are found mostly in south seattle.')
     st.write('H7: The north has the highest priced houses.')
     st.write('H8 - The annual growth in house prices is around 5%.')
@@ -246,24 +128,6 @@ def data_quest(df2):
     st.write('All of these increases in the resale price were calculated based on whether they were sold at the right time. (this time is indicated below)')
 
     st.subheader('2.2. When is the best time to sell these properties:')
-
-    df2 = data_reset()
-
-    df2['date'] = pd.to_datetime(df2['date']).dt.strftime('%Y-%m-%d')
-
-    for i in range(len(df2)):
-
-        if (df2.loc[i, 'date'] >= '2014-06-01') & (df2.loc[i, 'date'] <= '2014-08-31'):
-            df2.loc[i, 'seasons'] = 'summer'
-
-        elif (df2.loc[i, 'date'] >= '2014-09-01') & (df2.loc[i, 'date'] <= '2014-11-30'):
-            df2.loc[i, 'seasons'] = 'autumn'
-
-        elif (df2.loc[i, 'date'] >= '2014-03-01') & (df2.loc[i, 'date'] <= '2014-05-31'):
-            df2.loc[i, 'seasons'] = 'spring'
-
-        else:
-            df2.loc[i, 'seasons'] = 'winter'
 
     cols = ['seasons', 'price']
     kc = data_groupby(df2, cols)
@@ -347,7 +211,7 @@ def data_analysis(df2):
     #p5 = -(percentage1 * 100)
 
     c1.subheader('H1 - The price of houses with conditions 3 to 4 in relation to houses with '
-                 'condition 1 is higher.(True)')
+                 'condition 1 is about 41% higher.(True)')
 
     # data plot
 
@@ -362,7 +226,7 @@ def data_analysis(df2):
              'higher than houses with conditions 1.')
 
     c2.subheader('H2 - The price of houses with 2 to 4 bedrooms in relation to houses '
-                 'without bedrooms is higher. (True)')
+                 'without bedrooms is 38.27% higher or more. (True)')
 
     cols = ['bedrooms', 'price']
     ren = ['Bedrooms', 'Price Median']
@@ -376,7 +240,7 @@ def data_analysis(df2):
              'than houses with no bedroom.')
 
     c3.subheader('H3 - The price of houses with 2 to 4 bathrooms in relation to houses without '
-                 'a bathroom is higher. (True)')
+                 'a bathroom is equal to or greater than 49.30%. (True)')
 
     cols = ['bathrooms', 'price']
     ren = ['Bathrooms', 'Price Median']
@@ -388,7 +252,7 @@ def data_analysis(df2):
              'about 26.10% higher than houses with 1 without bathrooms.')
 
     c4.subheader('H4 - The price of houses with 2 floors in relation to houses with only 1 floor '
-                 'is higher. (True)')
+                 'is equal to or greater than 26.10%. (True)')
     cols = ['floors', 'price']
     ren = ['Floors', 'Price Median']
     dg4 = data_rename(dg4, cols, ren)
@@ -398,7 +262,7 @@ def data_analysis(df2):
     c4.write('The graph above shows that houses with 2 floors have a price about 26.10% higher '
              'than houses with 1 floor.')
 
-    st.subheader('H5 - Houses with a water view have a price higher than houses '
+    st.subheader('H5 - Houses with a water view have a price 67.86% higher than houses '
                  'without a water view. (True)')
     cols = ['waterfront', 'price']
     ren = ['Waterfront', 'Price Median']
